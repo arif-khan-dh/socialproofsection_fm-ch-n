@@ -1,0 +1,31 @@
+// === Width ===
+
+$width-mb: 23.4375rem; //375px
+$width-desk: 90rem; // 1440px;
+
+
+// === Fonts ===
+
+$font-xxsm: 0.75rem; // 12px
+$font-xsm: 0.875rem; // 14px
+$font-sm: 1rem; // 16px
+$font-md: 1.125rem; // 18px
+$font-lg: 1.25rem; // 20px
+$font-xlg: 1.5rem; // 24px
+$font-xxlg: 2rem; // 32px
+$font-xxxlg: 2.5rem; // 40px
+$font-xxxxlg: 3rem; // 48px
+$font-xxxxxlg: 4rem; // 60px
+
+
+// === Colors ===
+
+// Primary 
+$veryDark: hsl(300, 43%, 22%);
+$softPink: hsl(333, 80%, 67%);
+
+
+// Neutral
+$darkGrayishMagenta: hsl(303, 10%, 53%);
+$lightGrayishMagenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);

@@ -1,0 +1,62 @@
+.testimonials {
+    margin-top: toRem(46px);
+    display: flex;
+    gap: toRem(16px);
+
+    @include breakpoint-down(small) {
+        flex-direction: column;
+    }
+
+    @include breakpoint-up(medium) {
+        flex-basis: 100%;
+        align-items: flex-start;
+    }
+
+    .testimonial {
+        background-color: $veryDark;
+        padding: toRem(40px) toRem(30px);
+        font-size: $font-xsm;
+        color: $white;
+        text-align: left;
+        border-radius: toRem(8px);
+        
+        
+        @include breakpoint-up(medium) {
+            @for $i from 0 through 2 {
+                &:nth-child(#{$i + 1}){
+                    margin-top: multiply($i, 20px);
+                }
+            }
+        }
+
+
+        &__header {
+            display: flex;
+            flex-flow: column wrap;
+            height: toRem(50px);
+            align-content: flex-start;
+
+            &__pic {
+                width: toRem(50px);
+                height: toRem(50px);
+                margin-right: toRem(26px);
+                border-radius: 50%;
+                
+            }
+
+            &__name {
+                margin-top: auto;
+            }
+
+            &__type {
+                margin-bottom: auto;
+                color: $softPink;
+            }
+        }
+
+
+        &__msg {
+            margin-top: toRem(30px);
+        }
+    }
+}

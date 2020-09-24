@@ -1,0 +1,54 @@
+.ratings {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(20px);
+    color: $veryDark;
+    font-weight: 600;
+    font-size: $font-xxsm;
+
+    @include breakpoint-down(small){
+        margin-top: toRem(20px);
+    }
+
+    @include breakpoint-up(medium) {
+        flex-basis: 50%;
+        align-items: flex-end;
+    }
+
+    .rating {
+        display: flex;    
+        background-color: $lightGrayishMagenta;
+        padding: toRem(10px);
+        border-radius: toRem(5px);
+
+        @include breakpoint-down(small) {
+            flex-direction: column;
+            gap: toRem(6px);
+        }
+
+        @include breakpoint-up(medium) {
+            width: toRem(444px);
+            align-items: center;
+
+            @for $i from 0 through 2{
+                &:nth-child(#{$i + 1}){
+                    margin-right: multiply(2-$i, 50px);
+                }
+            }
+        }
+
+        &__stars {
+            @include breakpoint-up(medium) {
+                margin-left: toRem(30px);
+                margin-right: toRem(30px);
+            }
+        }
+
+        &__text {
+            @include breakpoint-up(medium) {
+            }
+        }
+    }
+
+    
+}

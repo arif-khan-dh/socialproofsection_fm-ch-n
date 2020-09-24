@@ -1,0 +1,36 @@
+.header {
+
+    @include breakpoint-down(small){
+        margin-top: toRem(80px);
+    }
+
+    @include breakpoint-up(medium) {
+        flex-basis: 50%;
+        text-align: left;
+        padding-right: toRem(130px);
+    }
+
+    &__headline {
+        color: $veryDark;
+
+        font-weight: 700;
+        line-height: 1.0;
+
+        @include breakpoint_down(small){
+            padding: 0 toRem(50px);
+            font-size: $font-xlg;
+        }
+
+        @include breakpoint-up(medium) {
+            font-size: $font-xxxlg;
+        }
+    }
+
+    &__subheadline {
+        margin-top: toRem(20px);
+        // line-height: 1.2;
+        font-size: $font-xsm;
+        color: $darkGrayishMagenta;
+    }
+
+}
