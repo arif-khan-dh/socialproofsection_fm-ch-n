@@ -1,14 +1,19 @@
 .testimonials {
     margin-top: toRem(46px);
     display: flex;
+    flex-direction: column;
+    // flex-basis: 100%;
 
-    @include breakpoint-down(small) {
-        flex-direction: column;
+    @include breakpoint-up(large) {   
+        flex-direction: row;     
+        flex-wrap:  wrap;        
+        justify-content: space-around;
+        align-content: space-around;
     }
 
-    @include breakpoint-up(medium) {
-        flex-basis: 100%;
-        align-items: flex-start;
+    @include breakpoint-up(xlarge) {
+        flex-wrap: nowrap;
+        justify-content: space-between;
     }
 
     .testimonial {
@@ -18,18 +23,62 @@
         color: $white;
         text-align: left;
         border-radius: toRem(8px);
-        
-        
-        @include breakpoint-up(medium) {
+        flex-basis: 32%;
+
+        &:not(:first-child) {
+            margin-top: toRem(16px);
+        }
+
+        @include breakpoint-up(large) {
+            flex-basis: 46%;
+            
+            &:not(:first-child) {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-top: 4%;
+            }
+
+        }
+
+        @include breakpoint-up(xlarge) {
+            flex-basis: 32%;
+            
+            &:not(:first-child) {
+                margin-top: 0;
+            }
+
+        }
+
+        @include breakpoint-up(xxlarge) {
+            flex-basis: 32%;
+            height: 100%;
+
+            // &:last-child {
+            //     margin-top: 0;
+            // }
+
             @for $i from 0 through 2 {
                 &:nth-child(#{$i + 1}){
                     margin-top: multiply($i, 20px);
-                    @if $i > 0 {
-                        margin-left: toRem(16px);
-                    }
                 }
             }
         }
+
+    
+        
+        
+        // @include breakpoint-up(medium) {
+        //     @for $i from 0 through 2 {
+        //         &:nth-child(#{$i + 1}){
+        //             margin-top: multiply($i, 20px);
+        //             @if $i > 0 {
+        //                 margin-left: toRem(16px);
+        //             }
+        //         }
+        //     }
+        // }
 
 
         &__header {

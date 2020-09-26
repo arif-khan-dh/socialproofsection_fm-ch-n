@@ -5,37 +5,63 @@
     font-weight: 600;
     font-size: $font-xxsm;
 
-    @include breakpoint-down(small){
-        margin-top: toRem(20px);
+    margin-top: toRem(20px);
+
+    @include breakpoint-up(large) {
+        max-width: 45%;
+        flex-grow: 1;
+        margin-top: 0;
     }
 
-    @include breakpoint-up(medium) {
-        flex-basis: 50%;
+    @include breakpoint-up(xlarge) {
+        flex-grow: 0;
+        width: toRem(400px);
+    }
+
+    @include breakpoint-up(xxlarge) {
+        justify-self: flex-end;
+        max-width: 50%;
+        width: 50%;
         align-items: flex-end;
     }
+    
 
     .rating {
-        display: flex;    
+        display: flex;
+        flex-direction: column; 
         background-color: $lightGrayishMagenta;
         padding: toRem(10px);
         border-radius: toRem(5px);
 
-        @include breakpoint-down(small) {
-            flex-direction: column;
-
-            &:not(:first-child){
-                margin-top: toRem(10px);
-            }
-        }
+        &:not(:first-child){
+            margin-top: toRem(10px);
+        }        
 
         @include breakpoint-up(medium) {
-            width: toRem(444px);
-            align-items: center;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        @include breakpoint-up(large) {        
+
+            &:not(:first-child){
+                margin-top: toRem(20px);
+            }
+
+            &:last-child {
+                margin-bottom: toRem(20px);
+            }
+
+        }
+
+        @include breakpoint-up(xxlarge) {
+            width: toRem(400px);
+            // align-items: center;
 
             @for $i from 0 through 2{
-                &:nth-child(#{$i + 1}){
+                &:nth-child(#{3 - $i}){
                     margin-right: multiply($i, 30px);
-                    @if  $i > 0 {
+                    @if  (3-$i) > 1 {
                         margin-top: toRem(20px);
                     }
                 }
@@ -43,10 +69,10 @@
         }
 
         &__stars {
-            @include breakpoint-up(medium) {
-                margin-left: toRem(30px);
-                margin-right: toRem(30px);
-            }
+            // @include breakpoint-up(large) {
+            //     margin-left: toRem(30px);
+            //     margin-right: toRem(30px);
+            // }
         }
 
         &__text {

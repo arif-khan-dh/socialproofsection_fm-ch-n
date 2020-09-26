@@ -1,28 +1,40 @@
 .header {
-
-    @include breakpoint-down(small){
-        margin-top: toRem(80px);
-    }
+    text-align: center;    
 
     @include breakpoint-up(medium) {
-        flex-basis: 50%;
+        text-align: center;
+    }
+
+    @include breakpoint-up(large) {
         text-align: left;
-        padding-right: toRem(130px);
+        flex-basis: 50%;
+    }
+
+    @include breakpoint-up(xlarge){
+        padding-right: toRem(40px);
+    }
+
+    @include breakpoint-up(xxlarge){
+        padding-right: toRem(60px);
     }
 
     &__headline {
         color: $veryDark;
-
         font-weight: 700;
         line-height: 1.0;
-
-        @include breakpoint_down(small){
-            padding: 0 toRem(50px);
-            font-size: $font-xlg;
-        }
+        
+        font-size: $font-xlg;
+        padding: 0 toRem(50px);
 
         @include breakpoint-up(medium) {
             font-size: $font-xxxlg;
+            padding: 0;
+        }
+
+        @include breakpoint-up(xlarge) {
+            font-size: $font-xxxxlg;
+            // padding: 0 toRem(50px) 0 0;
+            padding: 0 0 0 0;
         }
     }
 
